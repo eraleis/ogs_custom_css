@@ -1,16 +1,66 @@
-@-webkit-keyframes glow {
-    to {
-         border-color: gold;
-    -webkit-box-shadow: 0 0 5px gold;
-       -moz-box-shadow: 0 0 5px gold;
-            box-shadow: 0 0 5px gold;
-    }
+.avatar-subtext {
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.fa-star {
+    display: none;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .PlayerIcon {
-    border: 2px solid transparent;
-    -webkit-animation: glow 1.0s infinite alternate;  
-     -webkit-transition: border 1.0s linear, box-shadow 1.0s linear;
-       -moz-transition: border 1.0s linear, box-shadow 1.0s linear;
-            transition: border 1.0s linear, box-shadow 1.0s linear;
+  position: relative;
+  height: 24rem;
+  width: 16rem;
+  border-radius: 0.45rem;
+  cursor: pointer;
+  background-color: var(--clr-card);
+}
+
+:root {
+  --bg-background: #111827;
+  --clr-card: #1f2937;
+  --clr-1: #6420aa;
+  --clr-2: #ff3ea5;
+  --clr-3: #ff7ed4;
+}
+
+.PlayerIcon::after,
+.PlayerIcon::before {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  inset: -0.5rem;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--clr-card),
+    var(--clr-1),
+    var(--clr-2),
+    var(--clr-3),
+    var(--clr-2),
+    var(--clr-1),
+    var(--clr-card)
+  );
+  border-radius: inherit;
+  animation: rotate 2.5s linear infinite;
+}
+
+.card::after {
+  filter: blur(3rem);
+}
+
+@keyframes rotate {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
 }
