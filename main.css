@@ -12,12 +12,13 @@
   justify-content: center;
   align-items: center;
   border: 6px solid #0000;
+  border-radius: 10px;
   background: linear-gradient(#131219, #131219) padding-box, linear-gradient(
         var(--angle),
         gold,
         #ffffff
       ) border-box;
-  animation: 1s rotate linear infinite;
+  animation: 2s rotate linear infinite;
 }
 
 @keyframes rotate {
